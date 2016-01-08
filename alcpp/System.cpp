@@ -1,6 +1,7 @@
 #include "System.hpp"
 #include "Keyboard.hpp"
 #include "Mouse.hpp"
+#include "Joystick.hpp"
 #include "Touch.hpp"
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
@@ -29,6 +30,10 @@ void System::Init(int addons)
 
     if (!Mouse::Install()) {
         throw std::runtime_error("Failed to install mouse");
+    }
+
+    if (!Joystick::Install()) {
+        throw std::runtime_error("Failed to install joystick");
     }
 
     if (!Touch::Install()) {
