@@ -8,6 +8,7 @@ namespace alcpp
 
 class EventSource;
 class Display;
+class Timer;
 
 class Event : public ValueWrapper<ALLEGRO_EVENT>
 {
@@ -56,12 +57,14 @@ public:
     double GetTimestamp() const;
 
     // keyboard
+    Display GetKeyboardDisplay() const;
     int GetKeyboardKeycode() const;
     int GetKeyboardCharacter() const;
     int GetKeyboardModifiers() const;
     bool GetKeyboardRepeat() const;
 
     // mouse
+    Display GetMouseDisplay() const;
     int GetMouseX() const;
     int GetMouseY() const;
     int GetMouseZ() const;
@@ -80,6 +83,7 @@ public:
     int GetJoystickButton() const;
 
     // touch
+    Display GetTouchDisplay() const;
     int GetTouchId() const;
     float GetTouchX() const;
     float GetTouchY() const;
@@ -94,6 +98,10 @@ public:
     int GetDisplayWidth() const;
     int GetDisplayHeight() const;
     int GetDisplayOrientation() const;
+
+    // timer
+    alcpp::Timer GetTimer() const;
+    int64_t GetTimerCount() const;
 
 private:
     bool valid = false;

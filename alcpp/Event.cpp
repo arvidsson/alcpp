@@ -1,6 +1,7 @@
 #include "Event.hpp"
 #include "EventSource.hpp"
 #include "Display.hpp"
+#include "Timer.hpp"
 
 namespace alcpp
 {
@@ -30,6 +31,11 @@ double Event::GetTimestamp() const
     return Get().any.timestamp;
 }
 
+Display Event::GetKeyboardDisplay() const
+{
+    return Display(Get().keyboard.display, false);
+}
+
 int Event::GetKeyboardKeycode() const
 {
     return Get().keyboard.keycode;
@@ -48,6 +54,11 @@ int Event::GetKeyboardModifiers() const
 bool Event::GetKeyboardRepeat() const
 {
     return Get().keyboard.repeat;
+}
+
+Display Event::GetMouseDisplay() const
+{
+    return Display(Get().mouse.display, false);
 }
 
 int Event::GetMouseX() const
@@ -120,6 +131,11 @@ int Event::GetJoystickButton() const
     return Get().joystick.button;
 }
 
+Display Event::GetTouchDisplay() const
+{
+    return Display(Get().touch.display, false);
+}
+
 int Event::GetTouchId() const
 {
     return Get().touch.id;
@@ -178,6 +194,16 @@ int Event::GetDisplayHeight() const
 int Event::GetDisplayOrientation() const
 {
     return Get().display.orientation;
+}
+
+Timer Event::GetTimer() const
+{
+    return alcpp::Timer(Get().timer.source, false);
+}
+
+int64_t Event::GetTimerCount() const
+{
+    return int64_t();
 }
 
 }

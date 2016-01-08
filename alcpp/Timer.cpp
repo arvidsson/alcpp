@@ -6,6 +6,8 @@ namespace alcpp
 
 Timer::Timer(double secondsPerTick) : SharedPtr(al_create_timer(secondsPerTick), al_destroy_timer) {}
 
+Timer::Timer(ALLEGRO_TIMER *timer, bool managed) : SharedPtr(timer, managed, al_destroy_timer) {}
+
 void Timer::Start()
 {
     al_start_timer(get());

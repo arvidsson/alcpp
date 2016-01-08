@@ -12,6 +12,7 @@ class Timer : public SharedPtr<ALLEGRO_TIMER>
 {
 public:
     Timer(double secondsPerTick = 1.0 / 60);
+    Timer(ALLEGRO_TIMER *timer, bool managed = true);
 
     void Start();
     void Stop();
