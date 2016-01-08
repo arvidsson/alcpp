@@ -115,7 +115,10 @@ std::string System::GetAllegroVersionString()
 
 std::string System::GetStandardPathString(PathType pathType)
 {
-    return al_path_cstr(al_get_standard_path(pathType), ALLEGRO_NATIVE_PATH_SEP);
+    auto path = al_get_standard_path(pathType);
+    std::string pathString = al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP);
+    al_destroy_path(path);
+    return pathString;
 }
 
 }

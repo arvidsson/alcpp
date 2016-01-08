@@ -28,7 +28,7 @@ public:
     void Flush();
 
     Event WaitForEvent();
-    Event WaitForEventUntil(float seconds);
+    Event WaitForEvent(float secondsToWaitAtMost);
 };
 
 }

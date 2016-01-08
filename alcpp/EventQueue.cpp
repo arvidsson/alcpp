@@ -73,10 +73,10 @@ Event EventQueue::WaitForEvent()
     return Event(event);
 }
 
-Event EventQueue::WaitForEventUntil(float seconds)
+Event EventQueue::WaitForEvent(float secondsToWaitAtMost)
 {
     ALLEGRO_EVENT event;
-    if (al_wait_for_event_timed(get(), &event, seconds)) {
+    if (al_wait_for_event_timed(get(), &event, secondsToWaitAtMost)) {
         return Event(event);
     }
     return Event();
