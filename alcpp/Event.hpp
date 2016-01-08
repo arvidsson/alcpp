@@ -7,6 +7,7 @@ namespace alcpp
 {
 
 class EventSource;
+class Display;
 
 class Event : public ValueWrapper<ALLEGRO_EVENT>
 {
@@ -86,7 +87,13 @@ public:
     float GetTouchDY() const;
     bool GetTouchPrimary() const;
 
-    // TODO: add display events
+    // display
+    Display GetDisplay() const;
+    int GetDisplayX() const;
+    int GetDisplayY() const;
+    int GetDisplayWidth() const;
+    int GetDisplayHeight() const;
+    int GetDisplayOrientation() const;
 
 private:
     bool valid = false;

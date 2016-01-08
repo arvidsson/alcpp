@@ -1,5 +1,6 @@
 #include "Event.hpp"
 #include "EventSource.hpp"
+#include "Display.hpp"
 
 namespace alcpp
 {
@@ -147,6 +148,36 @@ float Event::GetTouchDY() const
 bool Event::GetTouchPrimary() const
 {
     return Get().touch.primary;
+}
+
+Display Event::GetDisplay() const
+{
+    return Display(Get().display.source, false);
+}
+
+int Event::GetDisplayX() const
+{
+    return Get().display.x;
+}
+
+int Event::GetDisplayY() const
+{
+    return Get().display.y;
+}
+
+int Event::GetDisplayWidth() const
+{
+    return Get().display.width;
+}
+
+int Event::GetDisplayHeight() const
+{
+    return Get().display.height;
+}
+
+int Event::GetDisplayOrientation() const
+{
+    return Get().display.orientation;
 }
 
 }

@@ -18,6 +18,8 @@ Display::Display(int width, int height, bool fullscreen)
     reset(al_create_display(width, height), al_destroy_display);
 }
 
+Display::Display(ALLEGRO_DISPLAY *display, bool managed) : SharedPtr(display, managed, al_destroy_display) {}
+
 int Display::GetWidth() const
 {
     return al_get_display_width(get());
