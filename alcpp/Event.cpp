@@ -119,4 +119,34 @@ int Event::GetJoystickButton() const
     return Get().joystick.button;
 }
 
+int Event::GetTouchId() const
+{
+    return Get().touch.id;
+}
+
+float Event::GetTouchX() const
+{
+    return Get().touch.x;
+}
+
+float Event::GetTouchY() const
+{
+    return Get().touch.y;
+}
+
+float Event::GetTouchDX() const
+{
+    return Get().touch.dx;
+}
+
+float Event::GetTouchDY() const
+{
+    return Get().touch.dy;
+}
+
+bool Event::GetTouchPrimary() const
+{
+    return Get().touch.primary;
+}
+
 }

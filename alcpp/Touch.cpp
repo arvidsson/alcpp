@@ -51,7 +51,7 @@ std::vector<Touch::State> Touch::GetTouches() const
     for (int i = 0; i < ALLEGRO_TOUCH_INPUT_MAX_TOUCH_COUNT; i++) {
         auto touch = &Get().touches[i];
         
-        if (touch > 0) {
+        if (touch->id > 0) {
             State state;
             state.x = touch->x;
             state.y = touch->y;

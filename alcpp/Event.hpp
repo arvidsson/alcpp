@@ -78,9 +78,15 @@ public:
     float GetJoystickAxisPosition() const;
     int GetJoystickButton() const;
 
+    // touch
+    int GetTouchId() const;
+    float GetTouchX() const;
+    float GetTouchY() const;
+    float GetTouchDX() const;
+    float GetTouchDY() const;
+    bool GetTouchPrimary() const;
+
     // TODO: add display events
-    // TODO: add joystick events
-    // TODO: add touch events
 
 private:
     bool valid = false;
