@@ -10,6 +10,7 @@
 #include "alcpp/Key.hpp"
 #include "alcpp/Keyboard.hpp"
 #include "alcpp/Mouse.hpp"
+#include "alcpp/Shader.hpp"
 #include "alcpp/SharedPtr.hpp"
 #include "alcpp/System.hpp"
 #include "alcpp/Time.hpp"
