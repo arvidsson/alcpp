@@ -48,7 +48,7 @@ public:
         DisplayHaltDrawing = ALLEGRO_EVENT_DISPLAY_HALT_DRAWING,
         DisplayResumeDrawing = ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING,
         DisplayConnected = ALLEGRO_EVENT_DISPLAY_CONNECTED,
-        DisplayDisconnected = ALLEGRO_EVENT_DISPLAY_CONNECTED
+        DisplayDisconnected = ALLEGRO_EVENT_DISPLAY_DISCONNECTED
     };
 
     Type GetType() const;
