@@ -72,9 +72,14 @@ public:
     int GetMouseButton() const;
     float GetMousePressure() const;
 
+    // joystick
+    int GetJoystickStick() const;
+    int GetJoystickAxis() const;
+    float GetJoystickAxisPosition() const;
+    int GetJoystickButton() const;
+
     // TODO: add display events
     // TODO: add joystick events
-    // TODO: add timer events
     // TODO: add touch events
 
 private:

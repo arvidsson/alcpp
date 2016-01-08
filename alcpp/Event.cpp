@@ -99,4 +99,24 @@ float Event::GetMousePressure() const
     return Get().mouse.pressure;
 }
 
+int Event::GetJoystickStick() const
+{
+    return Get().joystick.stick;
+}
+
+int Event::GetJoystickAxis() const
+{
+    return Get().joystick.axis;
+}
+
+float Event::GetJoystickAxisPosition() const
+{
+    return Get().joystick.pos;
+}
+
+int Event::GetJoystickButton() const
+{
+    return Get().joystick.button;
+}
+
 }
