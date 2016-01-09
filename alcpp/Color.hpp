@@ -27,6 +27,9 @@ public:
     // Transforms (r,g,b,a) to the allegro color struct and returns it.
     ALLEGRO_COLOR ToAllegroColor() const;
 
+    // Transforms (r,g,b,a) to the allegro color struct with alpha premultiplied and returns it (use this with tinted drawing methods).
+    ALLEGRO_COLOR ToPremultipliedAllegroColor() const;
+
     float GetRed() const;
     float GetGreen() const;
     float GetBlue() const;

@@ -106,6 +106,21 @@ void Display::DrawTintedScaledRotated(Bitmap &bitmap, Color &color, float center
     al_draw_tinted_scaled_rotated_bitmap(bitmap.get(), color.ToAllegroColor(), centerX, centerY, destX, destY, scaleX, scaleY, angle, flags);
 }
 
+void Display::HoldDrawing()
+{
+    al_hold_bitmap_drawing(true);
+}
+
+void Display::ReleaseDrawing()
+{
+    al_hold_bitmap_drawing(false);
+}
+
+bool Display::IsDrawingHeld() const
+{
+    return al_is_bitmap_drawing_held();
+}
+
 bool Display::HideMouse()
 {
     return al_hide_mouse_cursor(get());

@@ -47,6 +47,9 @@ public:
     void DrawTintedScaled(Bitmap &bitmap, Color &color, float srcX, float srcY, float srcWidth, float srcHeight, float destX, float destY, float destWidth, float destHeight, DrawFlags flags = DrawFlags::None);
     void DrawScaledRotated(Bitmap &bitmap, float centerX, float centerY, float destX, float destY, float scaleX, float scaleY, float angle, DrawFlags flags = DrawFlags::None);
     void DrawTintedScaledRotated(Bitmap &bitmap, Color &color, float centerX, float centerY, float destX, float destY, float scaleX, float scaleY, float angle, DrawFlags flags = DrawFlags::None);
+    void HoldDrawing();
+    void ReleaseDrawing();
+    bool IsDrawingHeld() const;
 
     bool HideMouse();
     bool ShowMouse();

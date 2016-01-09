@@ -101,6 +101,11 @@ ALLEGRO_COLOR Color::ToAllegroColor() const
     return al_map_rgba_f(r, g, b, a);
 }
 
+ALLEGRO_COLOR Color::ToPremultipliedAllegroColor() const
+{
+    return al_premul_rgba_f(r, g, b, a);
+}
+
 float Color::GetRed() const
 {
     return r;
