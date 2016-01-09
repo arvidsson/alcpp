@@ -9,6 +9,7 @@ namespace alcpp
 
 class EventSource;
 class Color;
+class Bitmap;
 
 class Display : public SharedPtr<ALLEGRO_DISPLAY>
 {
@@ -27,6 +28,25 @@ public:
     void SetAsTarget();
     void Clear(const Color& color);
     void Flip();
+
+    enum DrawFlags
+    {
+        None = 0,
+        FlipHorizontal = ALLEGRO_FLIP_HORIZONTAL,
+        FlipVertical = ALLEGRO_FLIP_VERTICAL
+    };
+
+    // drawing operations
+    void Draw(Bitmap &bitmap, float destX, float destY, DrawFlags flags = DrawFlags::None);
+    void DrawTinted(Bitmap &bitmap, Color &color, float destX, float destY, DrawFlags flags = DrawFlags::None);
+    void DrawRegion(Bitmap &bitmap, float srcX, float srcY, float srcWidth, float srcHeight, float destX, float destY, DrawFlags flags = DrawFlags::None);
+    void DrawTintedRegion(Bitmap &bitmap, Color &color, float srcX, float srcY, float srcWidth, float srcHeight, float destX, float destY, DrawFlags flags = DrawFlags::None);
+    void DrawRotated(Bitmap &bitmap, float centerX, float centerY, float destX, float destY, float angle, DrawFlags flags = DrawFlags::None);
+    void DrawTintedRotated(Bitmap &bitmap, Color &color, float centerX, float centerY, float destX, float destY, float angle, DrawFlags flags = DrawFlags::None);
+    void DrawScaled(Bitmap &bitmap, float srcX, float srcY, float srcWidth, float srcHeight, float destX, float destY, float destWidth, float destHeight, DrawFlags flags = DrawFlags::None);
+    void DrawTintedScaled(Bitmap &bitmap, Color &color, float srcX, float srcY, float srcWidth, float srcHeight, float destX, float destY, float destWidth, float destHeight, DrawFlags flags = DrawFlags::None);
+    void DrawScaledRotated(Bitmap &bitmap, float centerX, float centerY, float destX, float destY, float scaleX, float scaleY, float angle, DrawFlags flags = DrawFlags::None);
+    void DrawTintedScaledRotated(Bitmap &bitmap, Color &color, float centerX, float centerY, float destX, float destY, float scaleX, float scaleY, float angle, DrawFlags flags = DrawFlags::None);
 
     bool HideMouse();
     bool ShowMouse();

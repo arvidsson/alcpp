@@ -29,6 +29,8 @@ public:
     
     bool Load(const std::string &filename);
     bool Save(const std::string &filename) const;
+
+    // TODO: create bitmap from primitives
 };
 
 }
