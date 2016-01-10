@@ -172,6 +172,14 @@ public:
         return std::sqrt(dx * dx + dy * dy);
     }
 
+    Vec2<T> Lerp(const Vec2<T> &v, T alpha)
+    {
+        Vec2<T> t;
+        t.x = MathHelper<T>::Lerp(x, v.x, alpha);
+        t.y = MathHelper<T>::Lerp(y, v.y, alpha);
+        return t;
+    }
+
     std::string ToString() const
     {
         std::stringstream ss;
