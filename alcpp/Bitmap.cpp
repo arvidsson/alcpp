@@ -1,5 +1,4 @@
 #include "Bitmap.hpp"
-#include <allegro5/allegro_image.h>
 
 namespace alcpp
 {
@@ -10,7 +9,7 @@ Bitmap::Bitmap(int width, int height) : SharedPtr(al_create_bitmap(width, height
 
 Bitmap::Bitmap(Bitmap & parent, int x, int y, int width, int height) : SharedPtr(al_create_sub_bitmap(parent.get(), x, y, width, height), al_destroy_bitmap) {}
 
-Bitmap::Bitmap(const std::string filename) : SharedPtr(al_load_bitmap(filename.c_str()), al_destroy_bitmap) {}
+Bitmap::Bitmap(const std::string &filename) : SharedPtr(al_load_bitmap(filename.c_str()), al_destroy_bitmap) {}
 
 Bitmap Bitmap::Clone() const
 {

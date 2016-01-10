@@ -14,7 +14,7 @@ public:
     Bitmap(ALLEGRO_BITMAP *bitmap, bool managed = true);
     Bitmap(int width, int height);
     Bitmap(Bitmap &parent, int x, int y, int width, int height);
-    Bitmap(const std::string filename);
+    Bitmap(const std::string &filename);
 
     Bitmap Clone() const;
 

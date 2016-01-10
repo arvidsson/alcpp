@@ -20,7 +20,7 @@ public:
         PhysicsFS       = 1 << 6,
         Primitives      = 1 << 7,
         Video           = 1 << 8,
-        All             = Audio | ACodec | Font | TTF | Image | NativeDialog | PhysicsFS | Primitives | Video
+        All             = Audio | ACodec | Font | TTF | Image | NativeDialog | Primitives | Video
     };
 
     static void Init(int addons = Addon::All);
