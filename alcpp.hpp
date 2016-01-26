@@ -9,4 +9,6 @@
 #include "alcpp/input/KeyboardState.hpp"
 #include "alcpp/input/MouseState.hpp"
 
+#include "alcpp/time/Time.hpp"
+
 #include "alcpp/util/ToIntegral.hpp"
