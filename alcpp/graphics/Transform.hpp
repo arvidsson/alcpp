@@ -14,6 +14,7 @@ public:
     Transform(const ALLEGRO_TRANSFORM &transform);
     Transform& operator=(const Transform &transform);
     Transform& operator=(const ALLEGRO_TRANSFORM &transform);
+    ALLEGRO_TRANSFORM Get() { return trans; }
     
     void Identity();
     void Use();

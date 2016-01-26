@@ -12,6 +12,7 @@ class Game
 public:
     Game() : timer(1.0 / 60), display(800, 600)
     {
+        Keyboard::Install();
         eventQueue.Register(Keyboard::GetEventSource());
         eventQueue.Register(timer.GetEventSource());
         eventQueue.Register(display.GetEventSource());

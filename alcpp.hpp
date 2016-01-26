@@ -12,6 +12,7 @@
 #include "alcpp/time/Time.hpp"
 #include "alcpp/time/Timer.hpp"
 
+#include "alcpp/graphics/Shader.hpp"
 #include "alcpp/graphics/Transform.hpp"
 
 #include "alcpp/util/ToIntegral.hpp"
