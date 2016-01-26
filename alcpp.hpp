@@ -11,4 +11,6 @@
 
 #include "alcpp/time/Time.hpp"
 
+#include "alcpp/graphics/Transform.hpp"
+
 #include "alcpp/util/ToIntegral.hpp"
