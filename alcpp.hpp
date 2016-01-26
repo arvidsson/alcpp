@@ -4,3 +4,6 @@
 
 #include "alcpp/event/EventQueue.hpp"
 #include "alcpp/event/EventSource.hpp"
+#include "alcpp/event/Event.hpp"
+
+#include "alcpp/util/ToIntegral.hpp"
