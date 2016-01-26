@@ -10,6 +10,7 @@
 #include "alcpp/input/MouseState.hpp"
 
 #include "alcpp/time/Time.hpp"
+#include "alcpp/time/Timer.hpp"
 
 #include "alcpp/graphics/Transform.hpp"
 
