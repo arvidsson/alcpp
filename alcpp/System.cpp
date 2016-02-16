@@ -1,5 +1,5 @@
 #include "System.hpp"
-#include "input/Keyboard.hpp"
+#include "util/ToIntegral.hpp"
 #include <stdexcept>
 
 namespace alcpp
@@ -9,10 +9,6 @@ void System::Initialize()
 {
     if (!al_init()) {
         throw std::runtime_error("Failed to initialize allegro");
-    }
-
-    if (!Keyboard::Install()) {
-        throw std::runtime_error("Failed to install keyboard driver");
     }
 }
 
@@ -44,6 +40,14 @@ std::string System::GetAllegroVersionString()
     int revision = (version >> 8) & 255;
     std::string versionString = std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(revision);
     return versionString;
+}
+
+std::string System::GetStandardPathString(PathType pathType)
+{
+    auto path = al_get_standard_path(ToIntegral(pathType));
+    std::string pathString = al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP);
+    al_destroy_path(path);
+    return pathString;
 }
 
 void System::SetExeName(const std::string &name)
