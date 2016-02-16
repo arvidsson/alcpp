@@ -1,4 +1,5 @@
 #include "System.hpp"
+#include "input/Keyboard.hpp"
 #include <stdexcept>
 
 namespace alcpp
@@ -8,6 +9,10 @@ void System::Initialize()
 {
     if (!al_init()) {
         throw std::runtime_error("Failed to initialize allegro");
+    }
+
+    if (!Keyboard::Install()) {
+        throw std::runtime_error("Failed to install keyboard driver");
     }
 }
 
