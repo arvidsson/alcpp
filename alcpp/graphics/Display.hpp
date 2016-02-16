@@ -16,7 +16,7 @@ class Display : public SharedPtr<ALLEGRO_DISPLAY>
 public:
     Display() {}
     Display(int width, int height, bool fullscreen = false);
-    Display(ALLEGRO_DISPLAY *display, bool managed = true);
+    Display(ALLEGRO_DISPLAY *display, bool retain = true);
 
     int GetWidth() const;
     int GetHeight() const;
@@ -26,8 +26,9 @@ public:
     EventSource GetEventSource() const;
 
     void SetAsTarget();
+    void Clear();
     void Clear(const Color& color);
-    void Flip();
+    void SwapBuffers();
 
     enum DrawFlags
     {

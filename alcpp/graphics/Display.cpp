@@ -19,7 +19,7 @@ Display::Display(int width, int height, bool fullscreen)
     reset(al_create_display(width, height), al_destroy_display);
 }
 
-Display::Display(ALLEGRO_DISPLAY *display, bool managed) : SharedPtr(display, managed, al_destroy_display) {}
+Display::Display(ALLEGRO_DISPLAY *display, bool retain) : SharedPtr(display, al_destroy_display, retain) {}
 
 int Display::GetWidth() const
 {
@@ -46,12 +46,17 @@ void Display::SetAsTarget()
     al_set_target_backbuffer(get());
 }
 
+void Display::Clear()
+{
+    Clear(Color(0, 0, 0));
+}
+
 void Display::Clear(const Color &color)
 {
     al_clear_to_color(color.ToAllegroColor());
 }
 
-void Display::Flip()
+void Display::SwapBuffers()
 {
     al_flip_display();
 }
