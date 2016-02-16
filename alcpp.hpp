@@ -6,6 +6,8 @@
 #include "alcpp/event/EventQueue.hpp"
 #include "alcpp/event/EventSource.hpp"
 
+#include "alcpp/graphics/Bitmap.hpp"
+#include "alcpp/graphics/Color.hpp"
 #include "alcpp/graphics/Display.hpp"
 #include "alcpp/graphics/Shader.hpp"
 #include "alcpp/graphics/Transform.hpp"
