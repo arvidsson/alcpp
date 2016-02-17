@@ -1,7 +1,15 @@
-# alcpp
-Allegro 5 C++ wrapper
+alcpp
+=====
 
-### example
+Allegro 5 C++ wrapper.
+
+Install
+-------
+
+Include ```alcpp.hpp``` and ```alcpp``` folder in your project.
+
+Example
+-------
 
 ```c++
 #include <alcpp.hpp>
@@ -77,3 +85,7 @@ int main()
     return 0;
 }
 ```
+
+License
+-------
+MIT (c) arvidsson
