@@ -11,7 +11,7 @@ class Bitmap : public SharedPtr<ALLEGRO_BITMAP>
 {
 public:
     Bitmap() {}
-    Bitmap(ALLEGRO_BITMAP *bitmap, bool managed = true);
+    Bitmap(ALLEGRO_BITMAP *bitmap, bool retain = true);
     Bitmap(int width, int height);
     Bitmap(Bitmap &parent, int x, int y, int width, int height);
     Bitmap(const std::string &filename);
