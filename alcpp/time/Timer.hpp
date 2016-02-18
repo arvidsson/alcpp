@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../util/SharedPtr.hpp"
 #include <allegro5/allegro.h>
 
 namespace alcpp
@@ -7,13 +8,14 @@ namespace alcpp
 
 class EventSource;
 
-class Timer
+class Timer : public SharedPtr<ALLEGRO_TIMER>
 {
 public:
-    Timer(double secondsPerTick = 1.0 / 60);
-    ~Timer();
-    Timer(ALLEGRO_TIMER *timer, bool managed = true);
+    Timer() {}
+    Timer(double secondsPerTick);
+    Timer(ALLEGRO_TIMER *timer, bool retain = true);
 
+    void Create(double secondsPerTick);
     void Start();
     void Stop();
     void Resume();
@@ -27,10 +29,6 @@ public:
 
     double GetSpeed() const;
     void SetSpeed(double speed);
-
-private:
-    ALLEGRO_TIMER *timer = nullptr;
-    bool managed = true;
 };
 
 }
