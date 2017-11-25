@@ -1,12 +1,13 @@
 #pragma once
 
+#include "../util/ValueWrapper.hpp"
 #include <allegro5/allegro.h>
 #include <vector>
 
 namespace alcpp
 {
 
-class Transform
+class Transform : public ValueWrapper<ALLEGRO_TRANSFORM>
 {
 public:
     Transform();
@@ -14,7 +15,6 @@ public:
     Transform(const ALLEGRO_TRANSFORM &transform);
     Transform& operator=(const Transform &transform);
     Transform& operator=(const ALLEGRO_TRANSFORM &transform);
-    ALLEGRO_TRANSFORM Get() { return trans; }
     
     void Identity();
     void Use();
@@ -45,9 +45,6 @@ public:
     static Transform GetCurrentTransform();
     static Transform GetCurrentInverseTransform();
     static Transform GetCurrentProjectionTransform();
-
-private:
-    ALLEGRO_TRANSFORM trans;
 };
 
 }

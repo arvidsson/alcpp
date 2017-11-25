@@ -21,12 +21,12 @@ EventQueue::~EventQueue()
 
 void EventQueue::Register(EventSource eventSource)
 {
-    al_register_event_source(queue, eventSource.Get());
+    al_register_event_source(queue, eventSource.GetPtr());
 }
 
 void EventQueue::Unregister(EventSource eventSource)
 {
-    al_unregister_event_source(queue, eventSource.Get());
+    al_unregister_event_source(queue, eventSource.GetPtr());
 }
 
 void EventQueue::Pause()

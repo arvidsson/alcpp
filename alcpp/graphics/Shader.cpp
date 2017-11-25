@@ -77,12 +77,12 @@ bool Shader::SetVector(const std::string &name, std::vector<float> &v, int numCo
 
 bool Shader::SetMatrix(const std::string &name, Transform &t)
 {
-    return al_set_shader_matrix(name.c_str(), &t.Get());
+    return al_set_shader_matrix(name.c_str(), t.GetPtr());
 }
 
 bool Shader::SetSampler(const std::string &name, Bitmap &b, int unit)
 {
-    return al_set_shader_sampler(name.c_str(), b.Get(), unit);
+    return al_set_shader_sampler(name.c_str(), b.GetPtr(), unit);
 }
 
 std::string Shader::GetDefaultSource(Platform platform, Type type)

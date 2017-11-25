@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util/SharedPtr.hpp"
+#include "../util/SharedWrapper.hpp"
 #include <allegro5/allegro.h>
 
 namespace alcpp
@@ -8,7 +8,7 @@ namespace alcpp
 
 class EventSource;
 
-class Timer : public SharedPtr<ALLEGRO_TIMER>
+class Timer : public SharedWrapper<ALLEGRO_TIMER>
 {
 public:
     Timer() {}

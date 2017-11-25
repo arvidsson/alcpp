@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util/SharedPtr.hpp"
+#include "../util/SharedWrapper.hpp"
 #include <allegro5/allegro.h>
 #include <string>
 
@@ -11,7 +11,7 @@ class EventSource;
 class Color;
 class Bitmap;
 
-class Display : public SharedPtr<ALLEGRO_DISPLAY>
+class Display : public SharedWrapper<ALLEGRO_DISPLAY>
 {
 public:
     Display() {}

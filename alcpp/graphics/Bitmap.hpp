@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../util/SharedPtr.hpp"
+#include "../util/SharedWrapper.hpp"
 #include <allegro5/allegro.h>
 #include <string>
 
 namespace alcpp
 {
 
-class Bitmap : public SharedPtr<ALLEGRO_BITMAP>
+class Bitmap : public SharedWrapper<ALLEGRO_BITMAP>
 {
 public:
     Bitmap() {}

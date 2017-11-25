@@ -3,13 +3,13 @@
 namespace alcpp
 {
 
-Bitmap::Bitmap(ALLEGRO_BITMAP * bitmap, bool retain) : SharedPtr(bitmap, al_destroy_bitmap, retain) {}
+Bitmap::Bitmap(ALLEGRO_BITMAP * bitmap, bool retain) : SharedWrapper(bitmap, al_destroy_bitmap, retain) {}
 
-Bitmap::Bitmap(int width, int height) : SharedPtr(al_create_bitmap(width, height), al_destroy_bitmap) {}
+Bitmap::Bitmap(int width, int height) : SharedWrapper(al_create_bitmap(width, height), al_destroy_bitmap) {}
 
-Bitmap::Bitmap(Bitmap & parent, int x, int y, int width, int height) : SharedPtr(al_create_sub_bitmap(parent.get(), x, y, width, height), al_destroy_bitmap) {}
+Bitmap::Bitmap(Bitmap & parent, int x, int y, int width, int height) : SharedWrapper(al_create_sub_bitmap(parent.get(), x, y, width, height), al_destroy_bitmap) {}
 
-Bitmap::Bitmap(const std::string &filename) : SharedPtr(al_load_bitmap(filename.c_str()), al_destroy_bitmap) {}
+Bitmap::Bitmap(const std::string &filename) : SharedWrapper(al_load_bitmap(filename.c_str()), al_destroy_bitmap) {}
 
 Bitmap Bitmap::Clone() const
 {
